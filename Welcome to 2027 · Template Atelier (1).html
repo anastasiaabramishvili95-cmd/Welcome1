@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welcome to 2027 · Template Atelier</title>
+<style>
+:root{
+  --ivory:#F8F5EE; --cream:#F1EBDD; --sage:#A3AD96; --olive:#626D50;
+  --gold:#C5A46D; --charcoal:#37382F; --white:#FFFFFF;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:"Avenir Next","Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--ivory);color:var(--charcoal);font-family:var(--sans);display:grid;place-items:center;min-height:100vh;min-height:100svh;overflow:hidden}
+/* Landscape cover, 5:2 like a Notion cover (1500 x 600). Scales to the window. */
+.cover{position:relative;width:min(100vw,calc(100svh * 2.5));aspect-ratio:5/2;container-type:inline-size;background:linear-gradient(100deg,var(--ivory) 30%,var(--cream) 100%);display:grid;grid-template-columns:1fr 1px 1fr;align-items:center;gap:0 5cqw;padding:0 9cqw;overflow:hidden}
+.frame{position:absolute;inset:3.2cqw;border:1px solid var(--gold);border-radius:2.4cqw;pointer-events:none;transition:box-shadow .7s ease}
+.sprig{position:absolute;width:17cqw;height:auto;color:var(--sage);opacity:.75;pointer-events:none}
+.sprig.a{left:3.8cqw;bottom:3.8cqw}
+.sprig.b{right:3.8cqw;top:3.8cqw;transform:rotate(180deg)}
+.rule{width:1px;height:46%;background:linear-gradient(transparent,var(--gold),transparent)}
+.left,.right{transition:opacity .5s ease,transform .5s ease}
+.left{text-align:right}
+.right{text-align:left}
+.brand{font-size:max(.62rem,1cqw);letter-spacing:.32em;text-transform:uppercase;color:var(--olive)}
+.year{display:inline-block;margin-top:1.4cqw;padding:.3cqw 1.4cqw;border:1px solid var(--gold);border-radius:99px;font-family:var(--serif);font-size:max(.75rem,1.3cqw);letter-spacing:.18em}
+h1{margin-top:2cqw;font-family:var(--serif);font-weight:400;font-size:max(1.2rem,3.6cqw);line-height:1.12;letter-spacing:-.01em;text-wrap:balance}
+.sub{max-width:30ch;font-size:max(.72rem,1.35cqw);line-height:1.65}
+.cta{display:inline-block;margin-top:2.2cqw;padding:1.2cqw 2.8cqw;background:var(--olive);color:var(--ivory);border-radius:99px;font-size:max(.62rem,1.05cqw);font-weight:600;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .25s ease,transform .25s ease}
+.cta:hover{background:var(--charcoal);transform:translateY(-1px)}
+.cta:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.cue{display:flex;align-items:center;gap:1cqw;margin-top:2cqw;font-size:max(.55rem,.9cqw);letter-spacing:.2em;text-transform:uppercase;color:var(--olive)}
+.cue i{width:3cqw;height:1px;background:linear-gradient(90deg,var(--gold),transparent);animation:drift 2.4s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translateX(0);opacity:.5}50%{transform:translateX(6px);opacity:1}}
+.done{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:max(1.1rem,3cqw);color:var(--olive);opacity:0;pointer-events:none;transition:opacity .6s ease .3s}
+.opening .left,.opening .right{opacity:0;transform:scale(.97)}
+.opening .frame{box-shadow:0 0 0 1px var(--gold),inset 0 0 70px rgba(197,164,109,.35)}
+.opening .done{opacity:1}
+@media (max-width:560px){
+  body{overflow:auto}
+  .cover{width:100vw;aspect-ratio:auto;min-height:100svh;grid-template-columns:1fr;gap:28px;padding:64px 28px;text-align:center}
+  .rule{width:46%;height:1px;justify-self:center;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  .left,.right{text-align:center}.sub{margin:0 auto}.cue{justify-content:center}
+  .frame{inset:12px;border-radius:20px}.sprig{width:90px}
+  .brand{font-size:.7rem}.year{font-size:.9rem;padding:3px 14px;margin-top:14px}
+  h1{font-size:2rem;margin-top:20px}.sub{font-size:1rem}
+  .cta{font-size:.75rem;padding:14px 30px}.cue{font-size:.68rem}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important}}
+</style>
+</head>
+<body>
+<svg style="display:none" aria-hidden="true"><symbol id="leaf" viewBox="0 0 40 20"><path d="M0 10C10 0 28 0 40 10 28 20 10 20 0 10Z M2 10H38" fill="none" stroke="currentColor" stroke-width="1"/></symbol></svg>
+
+<main class="cover" id="welcome">
+  <div class="frame"></div>
+  <svg class="sprig a" viewBox="0 0 300 300" fill="none" aria-hidden="true"><path d="M10 290C70 240 120 170 150 60" stroke="currentColor" stroke-width="1.2"/><g color="#A3AD96"><use href="#leaf" x="40" y="236" width="48" height="24" transform="rotate(-35 64 248)"/><use href="#leaf" x="80" y="190" width="52" height="26" transform="rotate(-70 106 203)"/><use href="#leaf" x="108" y="130" width="48" height="24" transform="rotate(-100 132 142)"/><use href="#leaf" x="60" y="196" width="44" height="22" transform="rotate(25 82 207)"/><use href="#leaf" x="110" y="150" width="44" height="22" transform="rotate(10 132 161)"/></g></svg>
+  <svg class="sprig b" viewBox="0 0 300 300" fill="none" aria-hidden="true"><path d="M10 290C70 240 120 170 150 60" stroke="currentColor" stroke-width="1.2"/><g color="#A3AD96"><use href="#leaf" x="40" y="236" width="48" height="24" transform="rotate(-35 64 248)"/><use href="#leaf" x="80" y="190" width="52" height="26" transform="rotate(-70 106 203)"/><use href="#leaf" x="60" y="196" width="44" height="22" transform="rotate(25 82 207)"/></g></svg>
+
+  <div class="left">
+    <p class="brand">Template Atelier</p>
+    <p class="year" aria-label="Year 2027">2027</p>
+    <h1>Step into a year you chose on purpose.</h1>
+  </div>
+  <div class="rule" aria-hidden="true"></div>
+  <div class="right">
+    <p class="sub">A calmer, more balanced 2027, with room for what matters and a little less of everything else.</p>
+    <a class="cta" id="enter" href="#welcome">Enter your 2027</a>
+    <p class="cue" aria-hidden="true">Tap anywhere to continue<i></i></p>
+  </div>
+  <p class="done" role="status" aria-live="polite" id="done"></p>
+</main>
+
+<script>
+(function(){
+  "use strict";
+  // EDIT THIS: where "Enter your 2027" should take people. Leave "" to stay on this page.
+  var ENTER_URL = "";
+  try{
+    var body = document.body, cta = document.getElementById("enter"), done = document.getElementById("done");
+    if(!cta) return;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var fired = false;
+    if(ENTER_URL) cta.setAttribute("href", ENTER_URL);
+    function enter(e){
+      if(fired) return;
+      fired = true;
+      if(e && e.preventDefault) e.preventDefault();
+      body.classList.add("opening");
+      if(ENTER_URL){
+        done.textContent = "Opening your year…";
+        setTimeout(function(){ window.location.href = ENTER_URL; }, reduce ? 0 : 900);
+      }else{
+        done.textContent = "Welcome in.";
+      }
+    }
+    cta.addEventListener("click", enter);
+    document.addEventListener("click", enter);
+  }catch(err){}
+})();
+</script>
+</body>
+</html>
